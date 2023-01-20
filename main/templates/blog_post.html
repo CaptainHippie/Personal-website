@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<title>{{person.name_display}}- Blog- {{blog.title|truncatechars:20}}</title>
 <body class="blog-post">
     <!-- Live Style Switcher Starts - demo only -->
     {% include 'includes/switcher.html' %}
