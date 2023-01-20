@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<body class="home">
+    <!-- Live Style Switcher Starts - demo only -->
+    {% include 'includes/switcher.html' %}
+    <!-- Live Style Switcher Ends - demo only -->
+
+    <!-- Header Starts -->
+    {% include 'includes/header.html' %}
+    <!-- Header Ends -->
+
+    <!-- Main Content Starts -->
+    <section class="container-fluid main-container container-home p-0 revealator-slideup revealator-once revealator-delay1">
+        <div class="color-block d-none d-lg-block"></div>
+        <div class="row home-details-container align-items-center">
+            <div class="col-lg-4 bg position-fixed d-none d-lg-block" style="background-image:url(/media/{{person.profile_pic}})"></div>
+            <div class="col-12 col-lg-8 offset-lg-4 home-details text-left text-sm-center text-lg-left">
+                <div>
+                    <img src="/media/{{person.profile_pic}}" class="img-fluid main-img-mobile d-none d-sm-block d-lg-none" alt="my picture" />
+                    <h1 class="text-uppercase poppins-font">I'm {{person.name_display}}.<span>{{person.title}}</span></h1>
+                    <p class="open-sans-font">{{person.description}}</p>
+                    <a class="button" href="{% url 'about' person.slug %}">
+                        <span class="button-text">more about me</span>
+                        <span class="button-icon fa fa-arrow-right"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Main Content Ends -->
+</body>
+{% endblock %}
